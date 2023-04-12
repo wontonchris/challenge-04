@@ -54,6 +54,11 @@ function createQuizStage() {
 }
 
 function createQuestionElements(currentQuestionData) {
+  // Remove any existing question elements
+  var quizContainer = document.querySelector(".quiz-container");
+  quizContainer.innerHTML = "";
+
+  // Create elements for the current question
   var currentQuestionText = currentQuestionData.questionText;
   var questionTextBox = document.createElement("h3");
   var choiceOne = document.createElement("button");
@@ -66,13 +71,16 @@ function createQuestionElements(currentQuestionData) {
   choiceTwo.textContent = currentQuestionData.choices[1];
   choiceThree.textContent = currentQuestionData.choices[2];
   choiceFour.textContent = currentQuestionData.choices[3];
-  var quizContainer = document.querySelector(".quiz-container");
+  
+  // Append elements for the current question
   quizContainer.appendChild(questionTextBox);
   quizContainer.appendChild(choiceContainer);
   choiceContainer.appendChild(choiceOne);
   choiceContainer.appendChild(choiceTwo);
   choiceContainer.appendChild(choiceThree);
   choiceContainer.appendChild(choiceFour);
+  
+  // Add event listeners for each choice button
   choiceOne.addEventListener("click", function() {
     checkAnswer(choiceOne, currentQuestionData);
   });
@@ -85,7 +93,8 @@ function createQuestionElements(currentQuestionData) {
   choiceFour.addEventListener("click", function() {
     checkAnswer(choiceFour, currentQuestionData);
   });
- }
+}
+
 
  function checkAnswer(selectedChoice, currentQuestionData) {
   if (selectedChoice.textContent === currentQuestionData.correctAnswer) {
