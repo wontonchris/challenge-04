@@ -1,77 +1,82 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Timer Quiz</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Challenge</title>
     <link rel="stylesheet" href="style.css">
-  </head>
+</head>
+<body>
+    <div id="quiz"></div>
+    <button id="start-button"><h1>Start Quiz</h1></button>
+    <div id="timer-container"> Time left: </div>
+    <div class="quiz-container"></div>
+    <div id ="question-text"></div>
+    <div id = "choices-buttons"></div>
   <body>
+    <!-- <button id="start">Start Quiz</button>
     <div class="quiz">
       <h1>Timer Quiz</h1>
-      <p>Time Remaining: <span id="time">30</span> seconds</p>
+      <p>Time Remaining: <span id="time">60</span> seconds</p>
       <div class="question">
         <h2>Question 1:</h2>
         <p>Where was I born?</p>
-        <input type="radio" name="q1" value="a"> Taiwan<br>
-        <input type="radio" name="q1" value="b"> Hong Kong<br>
-        <input type="radio" name="q1" value="c"> USA<br>
-        <input type="radio" name="q1" value="d"> China<br>
+        <input type="radio" name="q1" value="a"> Taiwan<li>
+        <input type="radio" name="q1" value="b"> Hong Kong<li>
+        <input type="radio" name="q1" value="c"> USA<li>
+        <input type="radio" name="q1" value="d"> China<li>
         <input type="hidden" name="q1_answer" value="c">
       </div>
       <div class="question">
         <h2>Question 2:</h2>
         <p>What is my favorite type of Food?</p>
-        <input type="radio" name="q2" value="a"> Taiwanese<br>
-        <input type="radio" name="q2" value="b"> Korean<br>
-        <input type="radio" name="q2" value="c"> Cantonese<br>
-        <input type="radio" name="q2" value="d"> American<br>
+        <input type="radio" name="q2" value="a"> Taiwanese<li>
+        <input type="radio" name="q2" value="b"> Korean<li>
+        <input type="radio" name="q2" value="c"> Cantonese<li>
+        <input type="radio" name="q2" value="d"> American<li>
         <input type="hidden" name="q2_answer" value="c">
       </div>
       <div class="question">
         <h2>Question 3:</h2>
         <p>Who is my favorite Artist?</p>
-        <input type="radio" name="q3" value="a"> Boris Brejcha<br>
-        <input type="radio" name="q3" value="b"> FKJ<br>
-        <input type="radio" name="q3" value="c"> Diplo<br>
-        <input type="radio" name="q3" value="d"> Ark Patrol<br>
+        <input type="radio" name="q3" value="a"> Boris Brejcha<li>
+        <input type="radio" name="q3" value="b"> FKJ<li>
+        <input type="radio" name="q3" value="c"> Diplo<li>
+        <input type="radio" name="q3" value="d"> Ark Patrol<li>
         <input type="hidden" name="q3_answer" value="a">
       </div>
       <div class="question">
         <h2>Question 4:</h2>
         <p>Who is the GOAT?</p>
-        <input type="radio" name="q4" value="a"> Lebron James<br>
-        <input type="radio" name="q4" value="b"> Michael Jordan<br>
-        <input type="radio" name="q4" value="c"> Kobe Bryant<br>
-        <input type="radio" name="q4" value="d"> Kareem Abdul-Jabbar<br>
+        <input type="radio" name="q4" value="a"> Lebron James<li>
+        <input type="radio" name="q4" value="b"> Michael Jordan<li>
+        <input type="radio" name="q4" value="c"> Kobe Bryant<li>
+        <input type="radio" name="q4" value="d"> Kareem Abdul-Jabbar<li>
         <input type="hidden" name="q4_answer" value="a">
       </div>
       <div class="question">
         <h2>Question 5:</h2>
         <p>What is the best car manufacturer?</p>
-        <input type="radio" name="q5" value="a"> BMW<br>
-        <input type="radio" name="q5" value="b"> Porsche<br>
-        <input type="radio" name="q5" value="c"> Ferrari<br>
-        <input type="radio" name="q5" value="d"> Lamborghini<br>
+        <input type="radio" name="q5" value="a"> BMW<li>
+        <input type="radio" name="q5" value="b"> Porsche<li>
+        <input type="radio" name="q5" value="c"> Ferrari<li>
+        <input type="radio" name="q5" value="d"> Lamborghini<li>
         <input type="hidden" name="q5_answer" value="c">
       </div>
-      <!-- <button onclick="submitQuiz()">Submit</button>
-    </div>
-    <div class="quiz">
-        
-
-        <button id="submit-quiz">Submit</button>
-      </div> -->
+   
       <div class="score" style="display: none;">
-        ...
         <form id="leaderboard">
           <label for="initials">Enter your initials:</label>
           <input type="text" id="initials" name="initials" maxlength="3">
           <button type="submit">Submit</button>
         </form>
-      </div>
+      </div> -->
 
       
       
-    <!--  -->
+    
     <script src="script.js"></script>
   </body>
 </html>
