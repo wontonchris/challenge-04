@@ -71,8 +71,6 @@ function createQuestionElements(currentQuestionData) {
   choiceTwo.textContent = currentQuestionData.choices[1];
   choiceThree.textContent = currentQuestionData.choices[2];
   choiceFour.textContent = currentQuestionData.choices[3];
-  
-  // Append elements for the current question
   quizContainer.appendChild(questionTextBox);
   quizContainer.appendChild(choiceContainer);
   choiceContainer.appendChild(choiceOne);
@@ -80,7 +78,7 @@ function createQuestionElements(currentQuestionData) {
   choiceContainer.appendChild(choiceThree);
   choiceContainer.appendChild(choiceFour);
   
-  // Add event listeners for each choice button
+  
   choiceOne.addEventListener("click", function() {
     checkAnswer(choiceOne, currentQuestionData);
   });
