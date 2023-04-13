@@ -4,9 +4,9 @@
 Timed Quiz, Score Tracked
 
 ## Usage
-Github Repo: 
+Github Repo: https://github.com/wontonchris/challenge-04/
 
-Live Site:
+Live Site: https://wontonchris.github.io/challenge-04/
 
 ## User Story
 

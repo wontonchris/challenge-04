@@ -108,15 +108,7 @@ function createQuestionElements(currentQuestionData) {
   }
 }
 
-setInterval(function() {
-  timeLeft--;
-  document.getElementById("timer-container").innerHTML = "Time left: " + timeLeft;
-  if (timeLeft <= 0) {
-    clearInterval();
-    alert("Time's up!");
-    displayScore();
-  }
-}, 1000);
+
 
 function displayScore() {
   var initials = prompt("Congratulations! You finished with a score of " + userScore + ". Please enter your initials to save your score:");
