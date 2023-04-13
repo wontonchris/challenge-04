@@ -81,8 +81,8 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+/* button:hover {
   background-color: #EC407A;
   color: #FFFFFF;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
+} */

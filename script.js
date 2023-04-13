@@ -55,11 +55,11 @@ function createQuizStage() {
 }
 
 function createQuestionElements(currentQuestionData) {
-  // Remove any existing question elements
+  // Remove question? 
   var quizContainer = document.querySelector(".quiz-container");
   quizContainer.innerHTML = "";
 
-  // Create elements for the current question
+  // elements for the current question
   var currentQuestionText = currentQuestionData.questionText;
   var questionTextBox = document.createElement("h3");
   var choiceOne = document.createElement("button");

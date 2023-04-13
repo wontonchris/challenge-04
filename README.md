@@ -12,6 +12,8 @@ Live Site: https://wontonchris.github.io/challenge-04/
 
 I want to create a timed quiz to utilize the tools and skills I learned from the week in BootCamp
 
+![Quiz](https://cdn.discordapp.com/attachments/1085659301005250651/1095930359339819089/image.png)
+
 ## Acceptance Criteria
 
 ```
