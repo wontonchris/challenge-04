@@ -37,15 +37,16 @@ function startQuiz() {
   console.log("I click the button");
   startQuizButtonElement.style.display = "none";
   createQuestionElements(questionsList[currentQuestion]);
-  setInterval(function() {
+  var timeOut = setInterval(function() {
     timeLeft--;
     document.getElementById("timer-container").innerHTML = "Time left: " + timeLeft;
     if (timeLeft <= 0) {
-      clearInterval();
+      clearInterval(timeOut);
       alert("Time's up!");
     }
   }, 1000);
 }
+
 
 function createQuizStage() {
   var quizContainer = document.createElement("article");
