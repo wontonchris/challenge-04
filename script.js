@@ -33,13 +33,13 @@ var questionsList = [
 var startQuizButtonElement = document.getElementById("start-button");
 startQuizButtonElement.addEventListener("click", startQuiz);
 
+//start quiz
 function startQuiz() {
-  console.log("I click the button");
   startQuizButtonElement.style.display = "none";
   createQuestionElements(questionsList[currentQuestion]);
   var timeOut = setInterval(function() {
     timeLeft--;
-    document.getElementById("timer-container").innerHTML = "Time left: " + timeLeft;
+    document.getElementById("timer-container").textContent = "Time left: " + timeLeft;
     if (timeLeft <= 0) {
       clearInterval(timeOut);
       alert("Time's up!");
@@ -47,58 +47,37 @@ function startQuiz() {
   }, 1000);
 }
 
-
-function createQuizStage() {
-  var quizContainer = document.createElement("article");
-  quizContainer.classList.add("quiz-container");
-  document.body.appendChild(quizContainer);
-}
-
 function createQuestionElements(currentQuestionData) {
-  // Remove question? 
   var quizContainer = document.querySelector(".quiz-container");
   quizContainer.innerHTML = "";
-
-  // elements for the current question
+//creating section / h# reduce append
   var currentQuestionText = currentQuestionData.questionText;
   var questionTextBox = document.createElement("h3");
-  var choiceOne = document.createElement("button");
-  var choiceTwo = document.createElement("button");
-  var choiceThree = document.createElement("button");
-  var choiceFour = document.createElement("button");
   var choiceContainer = document.createElement("section");
   questionTextBox.textContent = currentQuestionText;
-  choiceOne.textContent = currentQuestionData.choices[0];
-  choiceTwo.textContent = currentQuestionData.choices[1];
-  choiceThree.textContent = currentQuestionData.choices[2];
-  choiceFour.textContent = currentQuestionData.choices[3];
   quizContainer.appendChild(questionTextBox);
   quizContainer.appendChild(choiceContainer);
-  choiceContainer.appendChild(choiceOne);
-  choiceContainer.appendChild(choiceTwo);
-  choiceContainer.appendChild(choiceThree);
-  choiceContainer.appendChild(choiceFour);
-  
-  
-  choiceOne.addEventListener("click", function() {
-    checkAnswer(choiceOne, currentQuestionData);
-  });
-  choiceTwo.addEventListener("click", function() {
-    checkAnswer(choiceTwo, currentQuestionData);
-  });
-  choiceThree.addEventListener("click", function() {
-    checkAnswer(choiceThree, currentQuestionData);
-  });
-  choiceFour.addEventListener("click", function() {
-    checkAnswer(choiceFour, currentQuestionData);
-  });
+
+
+  //question next
+  for (var i = 0; i < currentQuestionData.choices.length; i++) {
+    var choiceButton = document.createElement("button");
+    choiceButton.textContent = currentQuestionData.choices[i];
+    choiceContainer.appendChild(choiceButton);
+    choiceButton.addEventListener("click", function() {
+      checkAnswer(this, currentQuestionData);
+    });
+  }
 }
 
-
- function checkAnswer(selectedChoice, currentQuestionData) {
+function checkAnswer(selectedChoice, currentQuestionData) {
   if (selectedChoice.textContent === currentQuestionData.correctAnswer) {
     console.log("Correct answer");
     userScore += 20;
+    //added -minus score 
+  } else {
+    console.log("Incorrect answer");
+    userScore -= 20;
   }
   currentQuestion++;
   if (currentQuestion < questionsList.length) {
@@ -109,12 +88,8 @@ function createQuestionElements(currentQuestionData) {
   }
 }
 
-
-
 function displayScore() {
   var initials = prompt("Congratulations! You finished with a score of " + userScore + ". Please enter your initials to save your score:");
   localStorage.setItem(initials, userScore);
   window.location.href = "highscores.html";
 }
-
-
