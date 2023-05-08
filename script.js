@@ -29,11 +29,11 @@ var questionsList = [
     correctAnswer: "Ferrari",
   }
 ];
-//start button
+//start button event listener
 var startQuizButtonElement = document.getElementById("start-button");
 startQuizButtonElement.addEventListener("click", startQuiz);
 
-//start quiz
+//start quiz function
 function startQuiz() {
   startQuizButtonElement.style.display = "none";
   createQuestionElements(questionsList[currentQuestion]);
@@ -46,11 +46,11 @@ function startQuiz() {
     }
   }, 1000);
 }
-//create question elements
+//create question elements and choices
 function createQuestionElements(currentQuestionData) {
   var quizContainer = document.querySelector(".quiz-container");
   quizContainer.innerHTML = "";
-//creating section / h# reduce append
+//creating question text and appending to section
   var currentQuestionText = currentQuestionData.questionText;
   var questionTextBox = document.createElement("h3");
   var choiceContainer = document.createElement("section");
@@ -59,7 +59,7 @@ function createQuestionElements(currentQuestionData) {
   quizContainer.appendChild(choiceContainer);
 
 
-  //creating buttons
+  //creating buttons for choices and appending to section. 
   for (var i = 0; i < currentQuestionData.choices.length; i++) {
     var choiceButton = document.createElement("button");
     choiceButton.textContent = currentQuestionData.choices[i];
@@ -70,7 +70,7 @@ function createQuestionElements(currentQuestionData) {
     });
   }
 }
-//check answer
+//check answer function
 function checkAnswer(selectedChoice, currentQuestionData) {
   if (selectedChoice.textContent === currentQuestionData.correctAnswer) {
     console.log("Correct answer");
@@ -79,8 +79,8 @@ function checkAnswer(selectedChoice, currentQuestionData) {
     console.log("Incorrect answer");
     userScore -= 20;
   }
-  //added -time left
   currentQuestion++;
+  //check if quiz is completed or not
   if (currentQuestion < questionsList.length) {
     createQuestionElements(questionsList[currentQuestion]);
   } else {
@@ -88,7 +88,7 @@ function checkAnswer(selectedChoice, currentQuestionData) {
     displayScore();
   }
 }
-//display score
+//display score function
 function displayScore() {
   var initials = prompt("Congratulations! You finished with a score of " + userScore + ". Please enter your initials to save your score:");
   localStorage.setItem(initials, userScore);
